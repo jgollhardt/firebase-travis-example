@@ -42,6 +42,22 @@ exports.addWelcomeMessages = functions.auth.user().onCreate(async (user) => {
   console.log('Welcome message written to database.');
 });
 
+// Adds a message when someone quits the chat.
+exports.addWelcomeMessages = functions.auth.user().onDelete(async (user) => {
+  console.log('A user left the room.');
+  const fullName = user.displayName || 'Anonymous';
+
+  // Saves the new goodbye message into the database
+  // which then displays it in the FriendlyChat clients.
+  await admin.firestore().collection('messages').add({
+    name: 'Firebase Bot',
+    profilePicUrl: '/images/firebase-logo.png', // Firebase logo
+    text: `${fullName} just left the chat! Goodbye!`,
+    timestamp: admin.firestore.FieldValue.serverTimestamp(),
+  });
+  console.log('Welcome message written to database.');
+});
+
 // Checks if uploaded images are flagged as Adult or Violence and if so blurs them.
 exports.blurOffensiveImages = functions.runWith({memory: '2GB'}).storage.object().onFinalize(
     async (object) => {
