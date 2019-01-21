@@ -43,7 +43,7 @@ exports.addWelcomeMessages = functions.auth.user().onCreate(async (user) => {
 });
 
 // Adds a message when someone quits the chat.
-exports.addWelcomeMessages = functions.auth.user().onDelete(async (user) => {
+exports.addGoodbyeMessages = functions.auth.user().onDelete(async (user) => {
   console.log('A user left the room.');
   const fullName = user.displayName || 'Anonymous';
 
@@ -55,7 +55,7 @@ exports.addWelcomeMessages = functions.auth.user().onDelete(async (user) => {
     text: `${fullName} just left the chat! Goodbye!`,
     timestamp: admin.firestore.FieldValue.serverTimestamp(),
   });
-  console.log('Welcome message written to database.');
+  console.log('Goodbye message written to database.');
 });
 
 // Checks if uploaded images are flagged as Adult or Violence and if so blurs them.
