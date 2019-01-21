@@ -5,7 +5,7 @@ cache: npm
 jobs:
   include:
     - stage: deploy to staging
-      install: skip
+      install: npm install --prefix functions
       script: skip
       deploy:
         provider: firebase
