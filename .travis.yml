@@ -16,4 +16,6 @@ jobs:
         token:
           secure: Qe9QuBZFjpWHWWsTBfyESoeJi/NAXClwnILGCY8IihBZMQcMPBcBGQqKEVcXQjfHTvUWNmq8Z1dFDH0Hxgv6/DHsbIpjh58oHaEINbibY2/EBLRD8TRocLXh04o0uz+8ztkAG2i076mvy48Z0WYrWGdf4Zbsus3xzZ+0EW4zmbHFeXpyxsNyby5MpMRkc0pAcnObno3BelOeHmIEO0aKemuVo+b4/Hqbt5NHGd5cTmN5J19lobRf5bNK67i1zXVktdj6t62EvK6CD3JyYejrYbGRCbOxqH7F30tsolZl/r3Gy3pWjyrrLpgOIeo3Q+5UrSx0HP/yrOMU/wvcvHIumb92bYvhj/qI8CP6UtYySd5sNDT+9eAaH1EkHFvJsnESOmaU3sAU6J4zyzW3BL8WEhaWu8WpKjTp1TMO/uGELKEqvBB9xaxkYZq4Oui9lY5B4qcb9MfIrW0fs5m5jCNwcjW2TtiuC2AjgNwvU4wn4SDof0GDJKUTicIQZJCn5JaBpd5EHAjSUVd/t4TpOq+MPQJjA9m+5uuSyoljC2U08YXeS4IOW1oPxfy03sT4yE+ys5E3aU0J4AUbXefBmr9vftjHRQG37wGdpj2FdWGJTBK51MzzrqXndavDH3W82PoEpbCoL1uFEhQolCKFxzy4GdpZLaDilOhhdp4fZVK7W6k=
         skip_cleanup: true
+        on:
+          all_branches: true
         # force: true
