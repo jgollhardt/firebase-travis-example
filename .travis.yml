@@ -1,0 +1,18 @@
+language: node_js
+node_js: 8.11.4
+cache: npm
+
+jobs:
+  include:
+    - stage: deploy to staging
+      install: skip
+      script: skip
+      deploy:
+        provider: firebase
+        edge:
+          source: jgollhardt/dpl
+          branch: firebase-force-opt
+        project: travis-example
+        token:
+          secure: W3gjGtPMnnOXFh6Cq6MXgHHPJeteXVniED0+V3DOZLBCA6HdcwoQsxJ+6jLgzKwNCBlIX8ZxoGegM1dKOap9o3mXv85sv3HamTyVsAjPK6RYj8MQu3lZetX4DFzG/OqGKIQtLVYt/iChFKy3D+2FckYSQmvGpneKpvzW12iCIsZ3QCm1Vfx4S4s4CU8IuNiSP2Zid1tf8GP8OUKj9hxzJ8bvQq5nVD0vjMYSWhjLZcephH2xxAD/lW1NWR75LdAZXJu2LSiI1IlSuHO0QpZbjyCVBM/+ltFbMZgYjiJjedhItpAo43tESHeifp7Qcy9KBvC4bD1+Ef6TEEapwbCkMlq3IUHtHxGsJxQ+EcaQMt1PIOl5GWmqmPjU2xCMvcuvnSk/LYfy5MCXX41kkvAPQvkGnORKXsjDasn9FjE5ESM4VRVbG/DYjs2CqNrHVVzulVMh5Oxom0UriNPF2eZgp8ZtpWtv29/hT681ljiQi35qsZ3VLBinwcQGLcNlTnIie87NDFG2S8K7Y+F74BWcGmgM4uOiy95joOIlLfowodipN2aQr5nUNxZiWI9SfVT6slPDyxz1P5MvdkL8p7EhTvs9X5sKySVRh8f6vzIwN/f+oMe0vvY8jK6gODgLhObAPvuCVtyJa0LOc7dKpqN9TRwe0b8owCBmAd5+juoKlCI=
+        # force: true
